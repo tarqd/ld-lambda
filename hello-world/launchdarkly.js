@@ -8,11 +8,11 @@ const globalInstance = {
 };
 
 async function getLDClient() {
-  const { client, ready } = globalInstance;
+  const { client } = globalInstance;
   if (client === null || ready === null) {
     throw new Error("getLDCLient() was called before initializeLaunchDarkly()");
   }
-  await ready;
+  
   return client;
 }
 
